@@ -1,0 +1,76 @@
+/* Shared masthead for the directory and methods report. */
+.site-bar {
+  border-top: 4px solid #155891;
+  border-bottom: 1px solid #c9d4d9;
+  background: #fff;
+  color: #172f43;
+}
+.site-bar-inner {
+  width: min(78rem, calc(100% - 2 * clamp(1.15rem, 4vw, 4rem)));
+  margin-inline: auto;
+  min-height: 4rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .72rem;
+  min-height: 44px;
+  color: #172f43;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 730;
+  letter-spacing: -.035em;
+  white-space: nowrap;
+}
+.site-brand:hover { color: #155891; }
+.brand-pin {
+  position: relative;
+  flex: none;
+  width: 1.55rem;
+  height: 1.55rem;
+  margin: -.16rem .12rem .06rem .1rem;
+  transform: rotate(-45deg);
+  border-radius: 50% 50% 50% 0;
+  background: #155891;
+}
+.brand-pin::before, .brand-pin::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: .78rem;
+  height: .2rem;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #fff;
+}
+.brand-pin::after { transform: translate(-50%, -50%) rotate(-45deg); }
+.site-nav { display: flex; align-items: stretch; gap: clamp(.9rem, 2.2vw, 2rem); }
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .1rem 0 0;
+  border-bottom: 3px solid transparent;
+  color: #405766;
+  text-decoration: none;
+  font-size: .92rem;
+  font-weight: 550;
+  white-space: nowrap;
+}
+.site-nav a:hover { color: #105086; text-decoration: underline; text-underline-offset: .23em; }
+.site-nav a[aria-current="page"] { border-bottom-color: #155891; color: #154e7c; font-weight: 700; }
+@media (max-width: 30rem) {
+  .site-bar-inner { min-height: 3.6rem; gap: .7rem; }
+  .site-brand { font-size: 1.02rem; gap: .48rem; }
+  .brand-pin { width: 1.3rem; height: 1.3rem; }
+  .site-nav { gap: .85rem; }
+  .site-nav a { font-size: .82rem; }
+}
+@media (max-width: 22.5rem) {
+  .site-bar-inner { width: calc(100% - 1.6rem); }
+  .site-nav { gap: .55rem; }
+}

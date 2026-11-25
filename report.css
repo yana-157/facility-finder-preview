@@ -1,0 +1,48 @@
+:root {
+  color-scheme: light;
+  --ink: #172f43;
+  --text: #263b49;
+  --muted: #526574;
+  --action: #155891;
+  --rule: #c9d4d9;
+  color: var(--text);
+  background: #fafbf9;
+  line-height: 1.62;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(44rem, calc(100% - 2.5rem)); margin-inline: auto; }
+footer a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+
+a { color: var(--action); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { color: var(--ink); text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--action); outline-offset: 3px; }
+
+.report-intro { padding-block: clamp(2rem, 5vw, 3.75rem) 1.65rem; }
+h1, h2, h3, dt { color: var(--ink); }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.35rem, 5.8vw, 3.5rem); line-height: 1.06; letter-spacing: -.04em; }
+h2 { font-size: clamp(1.5rem, 3vw, 1.95rem); line-height: 1.2; letter-spacing: -.025em; }
+h3, dt { font-size: 1.125rem; line-height: 1.4; font-weight: 700; }
+p, dl, dd { margin: 0; }
+.lead { max-width: 36rem; font-size: clamp(1.125rem, 2.4vw, 1.375rem); line-height: 1.45; margin-top: .8rem; }
+.date { margin-top: 1rem; color: var(--muted); font-size: .9375rem; }
+.date time { white-space: nowrap; }
+
+.section-nav { display: flex; flex-wrap: wrap; column-gap: clamp(1rem, 3vw, 2rem); border-block: 1px solid var(--rule); }
+.section-nav a { display: inline-flex; align-items: center; min-height: 2.9rem; font-size: .9375rem; font-weight: 600; }
+
+section { padding-block: clamp(1.9rem, 4.5vw, 2.8rem); scroll-margin-top: 1.25rem; }
+section + section, footer { border-top: 1px solid var(--rule); }
+section p, dd { font-size: clamp(1rem, 1.35vw, 1.0625rem); max-width: 70ch; }
+section h2 + p { margin-top: .85rem; }
+section p + p { margin-top: .9rem; }
+h3, dt { margin-top: 1.45rem; }
+h3 + p, dd { margin-top: .35rem; }
+footer { padding-block: 1rem 2.5rem; }
+
+@media (max-width: 34rem) {
+  .section-nav { display: grid; grid-template-columns: auto auto; justify-content: start; column-gap: 1.25rem; }
+  .section-nav a { min-height: 2.75rem; }
+}
